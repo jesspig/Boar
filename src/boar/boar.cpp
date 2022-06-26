@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
 //        return 0;
 //    }
 
-    const char *code = "1 + 12 - 345 * 6789 / 98765";
+    const char *code = "1   + 12 -    345 * 6789 / 98765";
     boar::lexer lex(code);
     do {
         lex.getToken();

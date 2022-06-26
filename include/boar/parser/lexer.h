@@ -2,8 +2,9 @@
 #define BOAR_LEXER_H
 
 #include <string_view>
-#include <string>
+//#include <cctype>
 #include <memory>
+#include <string>
 
 namespace boar {
     enum class TOKENS {
@@ -39,8 +40,9 @@ namespace boar {
     public:
         lexer(const char *character) : code(character) {}
 
+        void getChar();
+
         void getToken();
-        void setToken(TOKENS token, int num, int position);
     };
 }
 #endif //BOAR_LEXER_H
