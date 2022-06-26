@@ -20,7 +20,7 @@ void boar::lexer::getToken() {
     } while (std::isspace(value));
 
     int num = 0;
-    TOKENS token;
+    TOKENS token = TOKENS::TOK_EOF;
     int position = current - 1;
 
     if (value == '\0') {
@@ -43,7 +43,7 @@ void boar::lexer::getToken() {
         do {
             num += num * 10 + value - '0';
             getChar();
-        } while (std::isdigit(value) && code.size() > current);
+        } while (std::isdigit(value));
     } else {
         printf("[SYNTAX ERROR] Not support character \"%c\" \n", value);
     }
@@ -51,5 +51,13 @@ void boar::lexer::getToken() {
     tokenizer = std::make_shared<TOKEN>();
     tokenizer->tok = token;
     tokenizer->value = num;
-    tokenizer->content = code.substr(position, current - position);
+    /*
+     * 如果是结束符就不截取，否则截取截取 1 个 token 的内容
+     * ---------------------------------------------
+     * If it ends, do not clip the substring,
+     * otherwise clip 1 token length string.
+     */
+    tokenizer->content = token == TOKENS::TOK_EOF
+                         ? code.substr(position, 0)
+                         : code.substr(position, current - position);
 }
