@@ -1,33 +1,13 @@
 #ifndef BOAR_LEXER_H
 #define BOAR_LEXER_H
 
+#include "Token.h"
+
 #include <string_view>
 #include <cctype>
 #include <memory>
 
 namespace boar {
-    enum class TOKENS {
-        /*
-         * 符号
-         *---------
-         * operator
-        */
-        TOK_PLUS, TOK_MINUS, TOK_MULTIPLY, TOK_DIVIDE,
-
-        /*
-         * 类型
-         * ----
-         * type
-         */
-        TOK_NUMBER,
-        TOK_EOF
-    };
-
-    struct TOKEN {
-        TOKENS tok;
-        int value;
-        std::string_view content;
-    };
 
     class Lexer {
     private:
@@ -43,5 +23,11 @@ namespace boar {
 
         void getToken();
     };
+
 }
+
+
+
+
+
 #endif //BOAR_LEXER_H
