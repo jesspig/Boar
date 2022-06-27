@@ -2,9 +2,8 @@
 #define BOAR_LEXER_H
 
 #include <string_view>
-//#include <cctype>
+#include <cctype>
 #include <memory>
-#include <string>
 
 namespace boar {
     enum class TOKENS {
@@ -30,7 +29,7 @@ namespace boar {
         std::string_view content;
     };
 
-    class lexer {
+    class Lexer {
     private:
         std::string_view code;
         char value = '\0';
@@ -38,7 +37,7 @@ namespace boar {
     public:
         std::shared_ptr<TOKEN> tokenizer;
     public:
-        lexer(const char *character) : code(character) {}
+        Lexer(const char *character) : code(character) {}
 
         void getChar();
 
