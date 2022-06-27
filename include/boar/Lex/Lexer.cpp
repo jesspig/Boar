@@ -1,6 +1,6 @@
-#include "lexer.h"
+#include "Lexer.h"
 
-void boar::lexer::getChar() {
+void boar::Lexer::getChar() {
     if (current >= code.size()) {
         value = '\0';
     } else {
@@ -9,7 +9,7 @@ void boar::lexer::getChar() {
 }
 
 
-void boar::lexer::getToken() {
+void boar::Lexer::getToken() {
     /*
      * 跳过空白字符
      * ---------------
