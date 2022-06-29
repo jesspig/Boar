@@ -1,10 +1,17 @@
 # Boar - Compiler
 
-这是一个自制的编译器，它用于编译 `Boar` 语言，它参考自 `TypeScript` ，所以语法看上去可能会有点相似，但是这只是暂定的，主要看开发难度，或许之后会变成其他的样子。所以可能会出现版本间完全不兼容的情况
+这是一个自制的编译器，它用于编译 `Boar` 语言，具体语法待定
+
+## 参考来源
+
+> [jamiebuilds](https://github.com/jamiebuilds): [the-super-tiny-compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)  
+> LLVM: [LLVM Tutorial: Table of Contents](https://llvm.org/docs/tutorial/index.html)  
+> Lua: [lua](https://github.com/lua/lua)  
 
 ## 进度
 
 - [ 2022-06-26 ] 初始化了项目
+- [ 2022-06-29 ] 实现了简单的分词器
 
 ## 目标
 - [ ] 基本运算 `[+-*/]`
