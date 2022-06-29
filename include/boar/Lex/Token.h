@@ -1,9 +1,9 @@
 #ifndef BOAR_TOKEN_H
 #define BOAR_TOKEN_H
 
-#include <string_view>
+#include <string>
 
-namespace boar{
+namespace boar {
     enum class TOKENS {
         /*
          * 符号
@@ -23,8 +23,7 @@ namespace boar{
 
     struct TOKEN {
         TOKENS tok;
-        int value;
-        std::string_view content;
+        std::string content;
     };
 }
 
