@@ -3,31 +3,26 @@
 
 #include "Token.h"
 
-#include <string_view>
-#include <cctype>
+#include <string>
 #include <memory>
 
 namespace boar {
 
     class Lexer {
     private:
-        std::string_view code;
-        char value = '\0';
+        std::string code;
         int current = 0;
+        char value = code[current];
     public:
         std::shared_ptr<TOKEN> tokenizer;
     public:
-        Lexer(const char *character) : code(character) {}
+        Lexer(std::string character) : code(character) {}
 
-        void getChar();
+        int getCurrent() { return current; }
 
         void getToken();
     };
 
 }
-
-
-
-
 
 #endif //BOAR_LEXER_H
