@@ -1,6 +1,6 @@
 #include "test.h"
 
-std::string code = "1   +12-    345*6789 / 987a65";
+std::string code = "1 +2*( 34 -56) / 7";
 
 
 void testLexer() {
@@ -14,8 +14,6 @@ void testLexer() {
 }
 
 int main() {
-
     testLexer();
-
     return 0;
 }
