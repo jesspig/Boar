@@ -5,6 +5,7 @@
 
 #include <string>
 #include <memory>
+#include <utility>
 
 namespace boar {
 
@@ -16,7 +17,7 @@ namespace boar {
     public:
         std::shared_ptr<TOKEN> tokenizer;
     public:
-        Lexer(std::string character) : code(character) {}
+        explicit Lexer(std::string character) : code(std::move(character)) {}
 
         int getCurrent() { return current; }
 

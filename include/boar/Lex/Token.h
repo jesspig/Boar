@@ -10,15 +10,15 @@ namespace boar {
          *---------
          * operator
         */
-        TOK_PLUS, TOK_MINUS, TOK_MULTIPLY, TOK_DIVIDE,
+        TOK_PLUS, TOK_MINUS, TOK_MULTIPLY, TOK_DIVIDE, TOK_EOF,
+        TOK_PARENT, TOK_EQUAL, TOK_GREATER, TOK_LESS,
 
         /*
          * 类型
          * ----
          * type
          */
-        TOK_NUMBER,
-        TOK_EOF
+        TOK_NUMBER, TOK_STRING
     };
 
     struct TOKEN {

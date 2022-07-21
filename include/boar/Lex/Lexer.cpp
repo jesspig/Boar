@@ -48,7 +48,32 @@ void boar::Lexer::getToken() {
         current++;
         return;
     }
+    if (value == '(' || value == ')') {
+        tokenizer->tok = TOKENS::TOK_PARENT;
+        tokenizer->content = value;
+        current++;
+        return;
+    }
+    if (value == '=') {
+        tokenizer->tok = TOKENS::TOK_EQUAL;
+        tokenizer->content = value;
+        current++;
+        return;
+    }
+    if (value == '>') {
+        tokenizer->tok = TOKENS::TOK_GREATER;
+        tokenizer->content = value;
+        current++;
+        return;
+    }
+    if (value == '<') {
+        tokenizer->tok = TOKENS::TOK_LESS;
+        tokenizer->content = value;
+        current++;
+        return;
+    }
+
     printf("[SYNTAX ERROR] Not support character \"%c\" \n", value);
-    exit(0);
+    current++;
 
 }
